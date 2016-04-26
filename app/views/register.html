@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="input-group input-group-lg margin-top">
+    <span class="input-group-addon "><img src="images/icon/icon_phone.png" alt=""></span>
+    <span class="input-group-addon close"><img src="images/icon/icon_close.png" alt=""></span>
+    <input type="tel" class="input-control " placeholder="请输入手机号" ng-model="inputPhone">
+  </div>
+  <div class="input-group input-group-lg line_2">
+    <span class="input-group-addon "><img src="images/icon/icon_code.png" alt=""></span>
+    <input type="text" class="input-control " placeholder="请输入验证码" ng-model="inputCaptcha">
+    <span class="input-group-addon close"><img src="images/icon/icon_close.png" alt=""></span>
+    <span class="input-group-addon btn" captcha ng-click="refreshCaptcha()"></span>
+  </div>
+  <div class=" ">
+    <span class="addon"><img src="images/icon/icon_yes.png" alt="">[阅读] 同意我买网服务协议</span>
+  </div>
+  <div class="text-center">
+    <button class="btn" type="button" ng-click="submitReg()">完成</button>
+  </div>
+</div>

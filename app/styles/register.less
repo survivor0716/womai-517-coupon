@@ -1,0 +1,118 @@
+@import "all";
+
+@height: .88rem;
+
+.register {
+  width: 5.888rem;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .margin-top {
+    margin-top: .3rem;
+  }
+
+  .container-fluid {
+    padding: 0;
+    .input-group {
+      position: relative;
+      height: @height;
+      line-height: @height;
+      border-bottom: 1px solid @color-border;
+      background-color: #fff;
+
+    }
+    .input-group-addon, .input-control {
+      border: none;
+      border-radius: 0;
+      background-color: #ffffff;
+      letter-spacing: 1px;
+    }
+    .input-group-addon {
+      color: #000000;
+      font-size: .28rem;
+      height: @height;
+      line-height: @height;
+      padding: 0;
+      padding-right: .15rem;
+    }
+    .input-group-addon img {
+      width: .4rem;
+    }
+    .input-group-addon.close {
+      position: absolute;
+      right: .1rem;
+      top: .1rem;
+      img {
+        width: .2rem;
+      }
+    }
+    .input-control {
+      display: block;
+      width: 100%;
+      height: .87rem;
+      line-height: @height*1.3;
+      font-size: .24rem;
+      color: #555;
+      background-color: #fff;
+      font-weight: lighter;
+    }
+
+    .line_2 {
+      width: 3.6rem;
+    }
+    /*- 验证码-*/
+    .input-group-addon.btn {
+      //display: none;
+      position: absolute;
+      top: .18rem;
+      right: -2.3rem;
+      width: 2rem;
+      height: .7rem;
+      border: 1px solid @color-btn-submit;
+      line-height: .7rem;
+      background-color: #fff;
+      border-radius: .1rem;
+      padding: 0;
+      color: @color-btn-submit;
+      font-size: .24rem;
+    }
+    .input-group-addon.btn.again {
+      font-size: .24rem;
+      background-color: @color-btn-submit;
+      #time {
+        font-size: .2rem;
+      }
+    }
+    .input-group-addon.btn.active {
+      display: none;
+    }
+    /*- 提交 -*/
+    .text-center .btn {
+      width: 100%;
+      height: .8rem;
+      background-color: #fff;
+      border: 1px solid @color-btn-submit;
+      margin: .3rem auto;
+      color: @color-btn-submit;
+      font-size: .26rem;
+      border-radius: .1rem;
+    }
+  }
+
+  /*-- 阅读 --*/
+  .addon {
+    color: #ff860f;
+    font-size: .2rem;
+    height: .5rem;
+    line-height: .5rem;
+    padding: 0;
+    padding-right: .15rem;
+    img {
+      width: .2rem;
+      margin-right: .1rem;
+      margin-top: -0.02rem;
+      cursor: pointer;
+    }
+  }
+}
