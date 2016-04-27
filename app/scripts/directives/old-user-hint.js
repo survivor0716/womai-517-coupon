@@ -10,10 +10,10 @@ angular.module('womai517CouponApp')
   .directive('oldUserHint', function () {
     return {
       template: '<div class="box">' +
-      '<i class="icon"><img src="http://womai2016.cdn.cocos2d-js.cn/H5_Project/517Coupon/images/icon/icon_close.png" alt="" ng-click="closeHint()"></i>' +
+      '<i class="icon"><img src="images/icon/icon_close.png" alt="" ng-click="closeHint()"></i>' +
       '<ul class="input-group">' +
       '<li>' +
-      '<img src="http://womai2016.cdn.cocos2d-js.cn/H5_Project/517Coupon/images/cayman.gif" alt="">' +
+      '<img src="images/cayman.gif" alt="">' +
       '<div>' +
       '<p>很抱歉您不是新用户</p>' +
       '<p>您可以领取老用户专享券哦</p>' +

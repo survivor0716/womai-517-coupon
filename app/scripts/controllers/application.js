@@ -8,7 +8,7 @@
  * Controller of the womai517CouponApp
  */
 angular.module('womai517CouponApp')
-  .controller('ApplicationCtrl', function ($log, $scope, $window) {
+  .controller('ApplicationCtrl', function ($log, $scope, $window, $http, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -24,12 +24,12 @@ angular.module('womai517CouponApp')
         $("#btnShare").on('click', function () {
           var shareData = {
             data: {
-              title         : "我买网双十一送钱到家！砸金蛋拿豪礼爽购狂欢等你来！",
-              commonImageUrl: "http://html5-web.cocos2d-js.cn/sharelogo/womai_1111_sharelogo.png",
-              webUrl        : "http://game.cocos2d-js.cn/Womai11/Index/index",
-              commonText    : "狂欢双十一我买网砸金蛋抢豪礼，一年爽一次，这次不能错过啊！快帮我爽一下！",
-              weiboContent  : "狂欢双十一我买网砸金蛋抢豪礼，一年爽一次，这次不能错过啊！快帮我爽一下！",
-              copyContent   : "狂欢双十一我买网砸金蛋抢豪礼，一年爽一次，这次不能错过啊！快帮我爽一下！"
+              title         : "吃货召集令",
+              commonImageUrl: "http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png",
+              webUrl        : "http://m.womai.com/517Coupon/web",
+              commonText    : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
+              weiboContent  : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
+              copyContent   : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！"
             }
           };
           bridge.callHandler('shareToApp', shareData, function (json) {
@@ -39,4 +39,31 @@ angular.module('womai517CouponApp')
         });
       });
     };
+
+    $scope._wxConfigArray = {};
+    var postUrl = 'http://m.womai.com/517Coupon/getShare';
+    var url = encodeURIComponent($window.location.href);
+    var params = {url: url};
+    $http.post(postUrl, params)
+      .then(function (rs) {
+        var res = rs.data;
+        if (!res.errCode) {
+          $scope._wxConfigArray = res.data;
+          //wx.config({
+          //  debug    : false,
+          //  appId    : $scope._wxConfigArray.appId,
+          //  timestamp: parseInt($scope._wxConfigArray.timestamp),
+          //  nonceStr : $scope._wxConfigArray.nonceStr,
+          //  signature: $scope._wxConfigArray.signature,
+          //  jsApiList: [
+          //    // 所有要调用的 API 都要加到这个列表中
+          //    "onMenuShareTimeline",
+          //    "onMenuShareAppMessage"
+          //  ]
+          //});
+          wxshare.invokeWXShare($scope._wxConfigArray);
+        } else {
+          alert(res.errMsg);
+        }
+      });
   });

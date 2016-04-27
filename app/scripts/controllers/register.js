@@ -8,7 +8,7 @@
  * Controller of the womai517CouponApp
  */
 angular.module('womai517CouponApp')
-  .controller('RegisterCtrl', function ($log, $window, $scope, $http, $location) {
+  .controller('RegisterCtrl', function ($log, $window, $scope, $http, $location, wxshare) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -17,6 +17,7 @@ angular.module('womai517CouponApp')
     $scope.settings.bodyClass = 'register';
 
     $scope.submitReg = function () {
+
       var params = {
         phone: $scope.inputPhone,
         code: $scope.inputCaptcha,
@@ -34,4 +35,11 @@ angular.module('womai517CouponApp')
         });
     };
 
+    //wxshare.getShareData()
+    //  .then(function (data) {
+    //    $log.debug(data);
+    //    if (1) {
+    //      wxshare.invokeWXShare(data);
+    //    }
+    //  });
   });

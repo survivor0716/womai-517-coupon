@@ -26,7 +26,7 @@ angular
         controller  : 'MainCtrl',
         controllerAs: 'main',
         resolve     : {
-          couponLeft: ['$log', '$http', '$q', function ($log, $http, $q) {
+          couponLeft  : function ($log, $http, $q) {
             return $http.post('http://m.womai.com/517Coupon/couponLeft')
               .then(function (response) {
                 if (typeof response.data === 'object') {
@@ -40,22 +40,7 @@ angular
               }, function (response) {
                 return $q.reject(response.data.errMsg);
               });
-          }],
-          getShareData: ['$log', '$http', '$q', function ($log, $http, $q) {
-            return $http.post('http://m.womai.com/517Coupon/getShare')
-              .then(function (response) {
-                if (typeof response.data === 'object') {
-                  var data = response.data;
-                  $log.debug('shareData: ', data);
-                  return data.errCode == 0 ? $q.resolve(data.data) : $q.reject(data.errMsg);
-                  //return data.data;
-                } else {
-                  return $q.reject(JSON.stringify(response.data));
-                }
-              }, function (response) {
-                return $q.reject(response.data.errMsg);
-              });
-          }]
+          }
         }
       })
       .when('/reg', {
