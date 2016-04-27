@@ -32,8 +32,8 @@ angular
                 if (typeof response.data === 'object') {
                   var data = response.data;
                   $log.debug('couponLeft: ', data);
-                  //return data.errCode == 0 ? $q.resolve(data.data) : $q.reject(data.errMsg);
-                  return data.data;
+                  return data.errCode == 0 ? $q.resolve(data.data) : $q.reject(data.errMsg);
+                  //return data.data;
                 } else {
                   return $q.reject(JSON.stringify(response.data));
                 }
@@ -47,8 +47,8 @@ angular
                 if (typeof response.data === 'object') {
                   var data = response.data;
                   $log.debug('shareData: ', data);
-                  //return data.errCode == 0 ? $q.resolve(data.data) : $q.reject(data.errMsg);
-                  return data.data;
+                  return data.errCode == 0 ? $q.resolve(data.data) : $q.reject(data.errMsg);
+                  //return data.data;
                 } else {
                   return $q.reject(JSON.stringify(response.data));
                 }

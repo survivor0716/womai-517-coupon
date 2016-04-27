@@ -8,7 +8,7 @@
  * Controller of the womai517CouponApp
  */
 angular.module('womai517CouponApp')
-  .controller('RegisterCtrl', function ($log, $scope, $http) {
+  .controller('RegisterCtrl', function ($log, $window, $scope, $http, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -27,6 +27,8 @@ angular.module('womai517CouponApp')
       $http.post('http://517coupon-01.womai.test.cocos2d-js.cn/submit', params)
         .then(function (response) {
           $log.debug('success: ', response);
+          $window.alert(response.data.errMsg);
+          $location.path('/');
         }, function (response) {
           $log.debug('error: ', response);
         });
