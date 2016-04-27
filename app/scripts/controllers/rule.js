@@ -8,10 +8,11 @@
  * Controller of the womai517CouponApp
  */
 angular.module('womai517CouponApp')
-  .controller('RuleCtrl', function () {
+  .controller('RuleCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $scope.settings.bodyClass = 'rule';
   });

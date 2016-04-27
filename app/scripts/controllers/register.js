@@ -14,7 +14,7 @@ angular.module('womai517CouponApp')
       'AngularJS',
       'Karma'
     ];
-    $scope.settings.isRegister = true;
+    $scope.settings.bodyClass = 'register';
 
     $scope.submitReg = function () {
       var params = {
@@ -29,7 +29,7 @@ angular.module('womai517CouponApp')
           $log.debug('success: ', response);
         }, function (response) {
           $log.debug('error: ', response);
-        })
+        });
     };
 
   });

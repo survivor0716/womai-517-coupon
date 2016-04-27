@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="styles/index.css">
   <!-- endbuild -->
 </head>
-<body ng-app="womai517CouponApp" ng-controller="ApplicationCtrl" ng-class="{'register': settings.isRegister}">
+<body ng-app="womai517CouponApp" ng-controller="ApplicationCtrl" ng-class="settings.bodyClass">
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -47,6 +47,7 @@
 <script src="scripts/helper.js"></script>
 <script src="scripts/bridge.min.js"></script>
 <script src="scripts/adapt.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/application.js"></script>
 <script src="scripts/controllers/main.js"></script>
@@ -54,6 +55,8 @@
 <script src="scripts/directives/old-user-hint.js"></script>
 <script src="scripts/controllers/rule.js"></script>
 <script src="scripts/directives/captcha.js"></script>
+<script src="scripts/services/wxshare.js"></script>
+<!--<script src="scripts/weixinShare.js"></script>-->
 <!-- endbuild -->
 </body>
 </html>

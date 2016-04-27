@@ -25,7 +25,7 @@ angular.module('womai517CouponApp')
       link    : function postLink(scope, element, attrs) {
         scope.closeHint = function () {
           element.hide();
-        }
+        };
       }
     };
   });

@@ -13,36 +13,44 @@
       </div>
       <!-- 2 -->
       <!--<div class="row">-->
-        <!--<div class="col-xs-6"><img src="images/coupon/c-300-30.png" alt="">-->
-          <!--<button class="btn">已领取</button>-->
-        <!--</div>-->
-        <!--<div class="col-xs-6"><img src="images/coupon/c-300-30.png" alt="">-->
-          <!--<button class="btn">立即领取</button>-->
-        <!--</div>-->
+      <!--<div class="col-xs-6"><img src="images/coupon/c-300-30.png" alt="">-->
+      <!--<button class="btn">已领取</button>-->
+      <!--</div>-->
+      <!--<div class="col-xs-6"><img src="images/coupon/c-300-30.png" alt="">-->
+      <!--<button class="btn">立即领取</button>-->
+      <!--</div>-->
       <!--</div>-->
       <div class="row">
         <div class="col-xs-4"><img src="images/coupon/c_sm_01.gif" alt="" ng-click="getCoupon('fanpiao8810')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('fanpiao8810')">立即获取</button>
+          <button ng-if="couponStatus.fanpiao8810" class="btn" type="button" ng-click="getCoupon('fanpiao8810')">立即获取</button>
+          <button ng-if="!couponStatus.fanpiao8810" class="btn active" type="button">已领空</button>
         </div>
+
         <div class="col-xs-4"><img src="images/coupon/c_sm_02.gif" alt="" ng-click="getCoupon('roupiao19950')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('roupiao19950')">立即获取</button>
+          <button ng-if="couponStatus.roupiao19950" class="btn" type="button" ng-click="getCoupon('roupiao19950')">立即获取</button>
+          <button ng-if="!couponStatus.roupiao19950" class="btn active" type="button">已领空</button>
         </div>
         <div class="col-xs-4"><img src="images/coupon/c_sm_03.gif" alt="" ng-click="getCoupon('yanghuo1010')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('yanghuo1010')">立即获取</button>
+          <button ng-if="couponStatus.yanghuo1010" class="btn" type="button" ng-click="getCoupon('yanghuo1010')">立即获取</button>
+          <button ng-if="!couponStatus.yanghuo1010" class="btn active" type="button">已领空</button>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-3"><img src="images/coupon/c_xs_01.gif" alt="" ng-click="getCoupon('liangpiao55')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('liangpiao55')">立即获取</button>
+          <button ng-if="couponStatus.liangpiao55" class="btn" type="button" ng-click="getCoupon('liangpiao55')">立即获取</button>
+          <button ng-if="!couponStatus.liangpiao55" class="btn active" type="button">已领空</button>
         </div>
         <div class="col-xs-3"><img src="images/coupon/c_xs_02.gif" alt="" ng-click="getCoupon('lingshi6910')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('lingshi6910')">立即获取</button>
+          <button ng-if="couponStatus.lingshi6910" class="btn" type="button" ng-click="getCoupon('lingshi6910')">立即获取</button>
+          <button ng-if="!couponStatus.lingshi6910" class="btn active" type="button">已领空</button>
         </div>
         <div class="col-xs-3"><img src="images/coupon/c_xs_03.gif" alt="" ng-click="getCoupon('jiuyin9910')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('jiuyin9910')">立即获取</button>
+          <button ng-if="couponStatus.jiuyin9910" class="btn" type="button" ng-click="getCoupon('jiuyin9910')">立即获取</button>
+          <button ng-if="!couponStatus.jiuyin9910" class="btn active" type="button">已领空</button>
         </div>
         <div class="col-xs-3"><img src="images/coupon/c_xs_04.gif" alt="" ng-click="getCoupon('baihuo9910')">
-          <button class="btn" type="button" ng-class="{'active': isSoldOut()}" ng-click="getCoupon('baihuo9910')">已领空</button>
+          <button ng-if="couponStatus.baihuo9910" class="btn" type="button" ng-click="getCoupon('baihuo9910')">立即获取</button>
+          <button ng-if="!couponStatus.baihuo9910" class="btn active" type="button">已领空</button>
         </div>
       </div>
     </div>
@@ -79,18 +87,18 @@
   <div id="mask" class="mask" ng-show="isOldUser" old-user-hint="">
     <!--以下内容移至directive中-->
     <!--<div class="box">-->
-      <!--<i class="icon"><img src="images/icon/icon_close.png" alt="" ng-click="closeHint()"></i>-->
-      <!--<ul class="input-group">-->
-        <!--<li>-->
-          <!--<img src="images/cayman.gif" alt="">-->
+    <!--<i class="icon"><img src="images/icon/icon_close.png" alt="" ng-click="closeHint()"></i>-->
+    <!--<ul class="input-group">-->
+    <!--<li>-->
+    <!--<img src="images/cayman.gif" alt="">-->
 
-          <!--<div>-->
-            <!--<p>很抱歉您不是新用户</p>-->
+    <!--<div>-->
+    <!--<p>很抱歉您不是新用户</p>-->
 
-            <!--<p>您可以领取老用户专享券哦</p>-->
-          <!--</div>-->
-        <!--</li>-->
-      <!--</ul>-->
+    <!--<p>您可以领取老用户专享券哦</p>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ul>-->
     <!--</div>-->
   </div>
 </div>
