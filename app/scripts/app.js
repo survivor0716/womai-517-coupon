@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    //'ngTouch',
+    'ng-fastclick'
   ], convertTransformRequest)
   .config(function ($logProvider, $routeProvider) {
     $logProvider.debugEnabled(true);
