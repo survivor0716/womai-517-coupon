@@ -75,21 +75,37 @@
     </ul>
   </section>
   <div class="rule2" ng-click="goToRule()">活动规则</div>
-  <div id="mask" class="mask" ng-show="isOldUser" old-user-hint="">
-    <!--以下内容移至directive中-->
-    <!--<div class="box">-->
-    <!--<i class="icon"><img src="images/icon/icon_close.png" alt="" ng-click="closeHint()"></i>-->
-    <!--<ul class="input-group">-->
-    <!--<li>-->
-    <!--<img src="images/cayman.gif" alt="">-->
 
-    <!--<div>-->
-    <!--<p>很抱歉您不是新用户</p>-->
+  <div id="regPanel" class="mask" ng-show="isShowRegPanel">
+    <div class="box">
+      <close-hint></close-hint>
 
-    <!--<p>您可以领取老用户专享券哦</p>-->
-    <!--</div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
+      <div class="reg text-center">
+        <p>亲，新人领券要先绑定手机号哦～</p>
+
+        <form ng-submit="submitReg()">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <input type="text" class="form-control" placeholder="请输入手机号" ng-model="inputPhone"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-1">
+              <input type="text" class="form-control" placeholder="请输入验证码" ng-model="inputCaptcha"/>
+            </div>
+            <div class="col-xs-4">
+              <div class="captcha" captcha ng-click="refreshCaptcha()"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              <button class="btn btn-success form-control" ng-disabled="disableSubmit">{{btnText}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
+
+  <div id="mask" class="mask" ng-show="isShowAlertPanel" old-user-hint=""></div>
 </div>

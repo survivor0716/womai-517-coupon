@@ -60,7 +60,7 @@ angular.module('womai517CouponApp')
         wx.ready(function () {
           // 在这里调用 API
           wx.onMenuShareTimeline({
-            title  : shareData.title, // 分享标题
+            title  : shareData.desc, // 分享标题
             link   : shareData.link, // 分享链接
             imgUrl : shareData.imgUrl, // 分享图标
             success: function () {

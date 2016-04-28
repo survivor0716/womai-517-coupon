@@ -43,11 +43,11 @@ angular
           }
         }
       })
-      .when('/reg', {
-        templateUrl : 'views/register.html',
-        controller  : 'RegisterCtrl',
-        controllerAs: 'register'
-      })
+      //.when('/reg', {
+      //  templateUrl : 'views/register.html',
+      //  controller  : 'RegisterCtrl',
+      //  controllerAs: 'register'
+      //})
       .when('/rule', {
         templateUrl : 'views/rule.html',
         controller  : 'RuleCtrl',

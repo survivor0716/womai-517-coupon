@@ -186,12 +186,13 @@
 }
 
 #mask {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, .6);
+  height:100%;
+  background-color: rgba(0, 0, 0, .5);
   z-index: 200;
   .box {
     position: relative;
@@ -202,7 +203,7 @@
     margin: 0 auto;
     .icon {
       position: absolute;
-      bottom: -.7rem;
+      top: 2.2rem;
       right: .3rem;
       z-index: 1;
       cursor: pointer;
@@ -216,9 +217,9 @@
     }
     ul {
       position: relative;
-      top: 3.5rem;
+      top: 2rem;
       width: 6rem;
-      height: 3.31rem;
+      height: 3.5rem;
       background-color: #fff;
       border-radius: .1rem;
       margin: 0 auto;
@@ -227,7 +228,7 @@
         width: 3.31rem;
         height: .6rem;
         margin: 0 auto;
-        margin-top: .36rem;
+        margin-top: .6rem;
         font-size: .28rem;
         line-height: .6rem;
         text-align: center;
@@ -247,5 +248,62 @@
       }
     }
   }
+}
 
+#regPanel {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 200;
+  .box {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 6rem;
+    height: auto;
+    margin: 0 auto;
+    .icon {
+      position: absolute;
+      top: 2.2rem;
+      right: .3rem;
+      z-index: 1;
+      cursor: pointer;
+      opacity: .6;
+      img {
+        width: .2rem;
+      }
+    }
+    .icon:active {
+      opacity: 1;
+    }
+    .reg {
+      position: relative;
+      top: 2rem;
+      width: 6rem;
+      height: 3.5rem;
+      background-color: #fff;
+      border-radius: .1rem;
+      margin: 0 auto;
+      padding: .5rem .5rem;
+      p {
+        margin-bottom: .2rem;
+        color: green;
+        font-size: .26rem;
+      }
+      form {
+        .row {
+          margin-bottom: .2rem;
+        }
+      }
+      .captcha {
+        display: block;
+        width: 100%;
+        height: 32px;
+      }
+    }
+  }
 }

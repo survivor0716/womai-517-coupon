@@ -13,6 +13,7 @@ angular.module('womai517CouponApp')
       restrict: 'EA',
       link: function postLink(scope, element, attrs) {
         scope.refreshCaptcha = function () {
+          $log.debug('refresh captcha');
           scope.settings.captchaId = uuid(8, 16);
           $log.debug('captcha id: ', scope.settings.captchaId);
           var url = 'http://517coupon-01.womai.test.cocos2d-js.cn/captcha?captchaSession=' + scope.settings.captchaId;
