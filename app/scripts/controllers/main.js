@@ -83,9 +83,6 @@ angular.module('womai517CouponApp')
             if(!data.errCode) {
               $scope.closeRegPanel();
               $scope.openAlertPanel(data.errMsg);
-              $timeout(function () {
-                $scope.closeAlertPanel();
-              }, 2000);
             } else {
               $scope.openAlertPanel(data.errMsg);
             }
