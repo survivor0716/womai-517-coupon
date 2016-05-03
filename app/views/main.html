@@ -45,34 +45,66 @@
         </div>
       </div>
     </div>
+
     <nav class="text-center"><img src="images/gif/title_02.gif" alt=""></nav>
 
     <ul class="list margin-top">
       <li class="">
         <a href="http://m.womai.com/0s4050.shtml"><img class="" src="images/link/link_01.png" alt="">
 
-          <span class="btn">&nbsp;&nbsp;去看看》</span>
+          <!--<span class="btn">&nbsp;&nbsp;去看看》</span>-->
         </a>
       </li>
       <li class="">
         <a href="http://m.womai.com/0s4051.shtml"><img class="" src="images/link/link_02.png" alt="">
 
-          <span class="btn">&nbsp;&nbsp;去看看》</span>
+          <!--<span class="btn">&nbsp;&nbsp;去看看》</span>-->
         </a>
       </li>
       <li class="">
         <a href="http://m.womai.com/0s4053.shtml"><img class="" src="images/link/link_03.png" alt="">
 
-          <span class="btn">&nbsp;&nbsp;去看看》</span>
+          <!--<span class="btn">&nbsp;&nbsp;去看看》</span>-->
         </a>
       </li>
       <li class="">
         <a href="http://m.womai.com/0s4054.shtml"><img class="" src="images/link/link_04.png" alt="">
 
-          <span class="btn">&nbsp;&nbsp;去看看》</span>
+          <!--<span class="btn">&nbsp;&nbsp;去看看》</span>-->
         </a>
       </li>
     </ul>
+
+    <nav class="text-center"><img src="images/gif/title_03.gif" alt=""></nav>
+
+    <div class="m-extend">
+      <div class="prod" ng-repeat="type in mExtend track by $index">
+        <div class="prod-name">{{type.type}}</div>
+        <ul class="prod-type">
+          <li class="prod-item" ng-repeat="item in type.item track by $index">
+            <a ng-href="{{item.url}}">
+              <p>
+                <img ng-src="{{item.img}}" alt=""/>
+              </p>
+
+              <h2 class="prod-desc">{{item.desc}}</h2>
+            </a>
+
+            <div class="cuxiao">
+              <img src="http://images01.womaiapp.com/s/goodstag/2.jpg" alt=""/>
+            </div>
+            <div class="s-lr">
+              <div class="sl">
+                <span class="s-color2">{{item.price}}</span>
+              </div>
+              <div class="sr">
+                <span class="s-jvBorder s-inblock"><a class="s-jvBtn s-Btn24" ng-href="{{item.url}}">立即购买</a></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
   <div class="rule2" ng-click="goToRule()">活动规则</div>
 

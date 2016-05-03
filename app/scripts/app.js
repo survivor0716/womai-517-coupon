@@ -61,7 +61,7 @@ angular
   .run(function ($log, $rootScope, $route) {
     $rootScope.$on('$routeChangeError', function (event, current, previous, rejection) {
       $log.debug('reload');
-      //$route.reload();
+      $route.reload();
     });
   });
 

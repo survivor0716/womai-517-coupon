@@ -69,9 +69,9 @@ angular.module('womai517CouponApp')
       $scope.disableSubmit = true;
       $scope.btnText = '领取ing...';
       var params = {
-        phone: $scope.inputPhone,
-        code: $scope.inputCaptcha,
-        couponid: $scope.settings.couponid,
+        phone         : $scope.inputPhone,
+        code          : $scope.inputCaptcha,
+        couponid      : $scope.settings.couponid,
         captchaSession: $scope.settings.captchaId
       };
       $log.debug(params);
@@ -80,7 +80,7 @@ angular.module('womai517CouponApp')
           if (typeof response.data === 'object') {
             var data = response.data;
             $log.debug('regData: ', data);
-            if(!data.errCode) {
+            if (!data.errCode) {
               $scope.closeRegPanel();
               $scope.openAlertPanel(data.errMsg);
             } else {
@@ -100,4 +100,42 @@ angular.module('womai517CouponApp')
           $scope.btnText = '立即领取';
         });
     };
+
+    $scope.mExtend = [];
+    //$scope.ext_product = {
+    //  type: '5.7元均一价',
+    //  item: []
+    //};
+    //$scope.ext_item = {
+    //  img  : 'http://pic.womai.com/upload/601/603/606/64306/280374/82609/601581/10352243_8981931_phone280_6761.jpg',
+    //  desc : '【自营】[安萃]千禧果 600g（盒装 )',
+    //  price: '￥5.70',
+    //  url  : ''
+    //};
+    //
+    //for (var m = 0; m < 2; m++) {
+    //  for (var i = 0; i < 3; i++) {
+    //    $scope.ext_product.item.push($scope.ext_item);
+    //  }
+    //  $scope.mExtend.push($scope.ext_product);
+    //}
+
+    $log.debug($scope.mExtend);
+
+    $http.post('http://m.womai.com/517Coupon/getMExtend')
+      .then(function (response) {
+        if (typeof response.data === 'object') {
+          var data = response.data;
+          $log.debug('regData: ', data);
+          if (!data.errCode) {
+            $scope.mExtend = data.data;
+          } else {
+            $log.debug('error: ', data.errMsg);
+          }
+        } else {
+          $log.debug('error: ', JSON.stringify(response));
+        }
+      }, function (response) {
+        $log.debug('error: ', JSON.stringify(response));
+      });
   });

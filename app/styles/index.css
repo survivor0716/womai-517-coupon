@@ -89,7 +89,7 @@ input {
 }
 .home {
   padding: 0;
-  background-color: #ffd64d;
+  background-color: #cbf514;
   /*-- section 1 --*/
   /*-- 活动规则 --*/
 }
@@ -209,7 +209,7 @@ input {
 .home .section1 .list {
   width: 6.4rem;
   overflow: hidden;
-  border: 1px solid #f4a914;
+  border: 1px solid #cbf514;
   margin-bottom: .36rem;
 }
 .home .section1 .list li {
@@ -222,7 +222,6 @@ input {
 }
 .home .section1 .list li a {
   position: relative;
-  border: 1px solid #f4a914;
   display: block;
   width: 3.19rem;
   height: 1.8rem;
@@ -262,6 +261,106 @@ input {
   line-height: 1.2;
   cursor: pointer;
   z-index: 1;
+}
+.home .m-extend {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.home .m-extend .prod {
+  clear: both;
+}
+.home .m-extend .prod .prod-name {
+  padding-top: .1rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  color: #e80000;
+}
+.home .m-extend .prod ul.prod-type {
+  padding-top: .1rem;
+  list-style: none;
+}
+.home .m-extend .prod ul.prod-type li.prod-item {
+  border: 1px solid #d3d3d3;
+  width: 2.9rem;
+  float: left;
+  margin: 0 0.15rem;
+  margin-bottom: 0.2rem;
+  padding: 0.16rem 0.04rem;
+  padding-top: 0.04rem;
+  background-color: #fff;
+  position: relative;
+}
+.home .m-extend .prod ul.prod-type li.prod-item a {
+  color: #333;
+  text-decoration: none;
+  font-size: .24rem;
+}
+.home .m-extend .prod ul.prod-type li.prod-item a p {
+  width: 100%;
+  height: 2.9rem;
+  overflow: hidden;
+}
+.home .m-extend .prod ul.prod-type li.prod-item a p img {
+  width: 100%;
+  height: 2.9rem;
+}
+.home .m-extend .prod ul.prod-type li.prod-item a h2 {
+  font-size: .22rem;
+  height: 1rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow: hidden;
+}
+.home .m-extend .prod ul.prod-type li.prod-item a .prod-desc {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .cuxiao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .cuxiao img {
+  width: 100%;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr {
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 13px;
+  line-height: 14px;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sl {
+  float: left;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sl .s-color2 {
+  color: #e80000;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sr {
+  float: right;
+  padding-top: 4px;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sr .s-jvBorder {
+  border: 1px solid #ff8143;
+  border-radius: 3px;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sr .s-inblock {
+  display: inline-block;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sr .s-jvBtn {
+  display: block;
+  border-radius: 1px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ff8143;
+  color: #fff;
+}
+.home .m-extend .prod ul.prod-type li.prod-item .s-lr .sr .s-Btn24 {
+  height: 24px;
+  line-height: 24px;
+  min-width: 74px;
 }
 #mask {
   display: block;
@@ -428,7 +527,7 @@ input {
 .bind_phone {
   width: 100%;
   height: 100%;
-  background-color: #ffd64d;
+  background-color: #cbf514;
 }
 .bind_phone .margin-top {
   margin-top: .3rem;
@@ -613,7 +712,7 @@ input {
   cursor: pointer;
 }
 .rule {
-  background-color: #ffd64d;
+  background-color: #cbf514;
 }
 .rule nav img {
   width: 100%;
@@ -663,7 +762,7 @@ input {
   margin-left: -0.13rem;
   margin-top: -0.13rem;
   text-align: center;
-  color: #ffd64d;
+  color: #cbf514;
   font-size: .2rem;
   font-style: normal;
 }

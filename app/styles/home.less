@@ -124,7 +124,7 @@
     }
 
     .list {
-      @border: #f4a914;
+      @border: #cbf514;
       width: 6.4rem;
       overflow: hidden;
       border: 1px solid @border;
@@ -138,7 +138,7 @@
         box-sizing: content-box;
         a {
           position: relative;
-          border: 1px solid @border;
+//          border: 1px solid @border;
           display: block;
           width: 3.19rem;
           height: 1.8rem;
@@ -183,6 +183,106 @@
     cursor: pointer;
     z-index: 1;
   }
+  .m-extend {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .prod {
+      clear: both;
+      .prod-name {
+        padding-top: .1rem;
+        padding-left: .2rem;
+        padding-right: .2rem;
+        color: #e80000;
+      }
+      ul.prod-type {
+        padding-top: .1rem;
+        list-style: none;
+        li.prod-item {
+          border: 1px solid #d3d3d3;
+          width: 2.9rem;
+          float: left;
+          margin: 0 0.15rem;
+          margin-bottom: 0.2rem;
+          padding: 0.16rem 0.04rem;
+          padding-top: 0.04rem;
+          background-color: #fff;
+          position: relative;
+          a {
+            color: #333;
+            text-decoration: none;
+            font-size: .24rem;
+            p {
+              width: 100%;
+              height: 2.9rem;
+              overflow: hidden;
+              img {
+                width: 100%;
+                height: 2.9rem;
+              }
+            }
+            h2 {
+              font-size: .22rem;
+              height: 1rem;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              overflow: hidden;
+            }
+            .prod-desc {
+              padding-left: 8px;
+              padding-right: 8px;
+            }
+          }
+          .cuxiao {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            img {
+              width: 100%
+            }
+          }
+          .s-lr {
+            padding-left: 2px;
+            padding-right: 2px;
+            font-size: 13px;
+            line-height: 14px;
+            .sl {
+              float: left;
+              .s-color2 {
+                color: #e80000;
+              }
+            }
+            .sr {
+              float: right;
+              padding-top: 4px;
+              .s-jvBorder {
+                border: 1px solid #ff8143;
+                border-radius: 3px;
+              }
+              .s-inblock {
+                display: inline-block;
+              }
+              .s-jvBtn {
+                display: block;
+                border-radius: 1px;
+                text-align: center;
+                cursor: pointer;
+                background-color: #ff8143;
+                color: #fff;
+              }
+              .s-Btn24 {
+                height: 24px;
+                line-height: 24px;
+                min-width: 74px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #mask {
@@ -191,7 +291,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, .5);
   z-index: 200;
   .box {
