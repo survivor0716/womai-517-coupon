@@ -106,7 +106,10 @@
       </div>
     </div>
   </section>
+
   <div class="rule2" ng-click="goToRule()">活动规则</div>
+
+  <div class="fixedShareBtn" ng-click="share()"></div>
 
   <div id="regPanel" class="mask" ng-show="isShowRegPanel">
     <div class="box">
@@ -140,4 +143,8 @@
   </div>
 
   <div id="mask" class="mask" ng-show="isShowAlertPanel" old-user-hint=""></div>
+
+  <div class="mask" ng-show="settings.isShare" ng-click="closeShare()">
+    <div class="box share-bg"></div>
+  </div>
 </div>

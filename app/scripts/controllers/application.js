@@ -18,26 +18,34 @@ angular.module('womai517CouponApp')
     $scope.settings.bodyClass = '';
     $scope.settings.captchaId = null;
     $scope.settings.couponid = null;
+    $scope.settings.isShare = false;
 
     $scope.share = function () {
+      var ua = $window.navigator.userAgent.toLowerCase();
+      $log.debug(ua);
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        $scope.settings.isShare = true;
+        return;
+      }
       $bridge(function (bridge) {
-        $("#btnShare").on('click', function () {
-          var shareData = {
-            data: {
-              title         : "吃货召集令",
-              commonImageUrl: "http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png",
-              webUrl        : "http://m.womai.com/517Coupon/web",
-              commonText    : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
-              weiboContent  : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
-              copyContent   : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！"
-            }
-          };
-          bridge.callHandler('shareToApp', shareData, function (json) {
-            $window.alert(json);
-          });
-
+        var shareData = {
+          data: {
+            title         : "吃货召集令",
+            commonImageUrl: "http://womai2016.cdn.cocos2d-js.cn/Icon/icon_womai_517Coupon.png",
+            webUrl        : "http://m.womai.com/517Coupon/web",
+            commonText    : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
+            weiboContent  : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！",
+            copyContent   : "全球美食狂欢节，吃在我买网 ！百万优惠券免费领，是吃货你就来！"
+          }
+        };
+        bridge.callHandler('shareToApp', shareData, function (json) {
+          $window.alert(json);
         });
       });
+    };
+
+    $scope.closeShare = function () {
+      $scope.settings.isShare = false;
     };
 
     $scope._wxConfigArray = {};
