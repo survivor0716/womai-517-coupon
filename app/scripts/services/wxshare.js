@@ -8,13 +8,21 @@
  * Factory in the womai517CouponApp.
  */
 angular.module('womai517CouponApp')
-  .factory('wxshare', function ($log, $window, $http, $q, $location) {
+  .factory('wxshare', function ($log, $window, $http, $q, $location, api) {
     // Service logic
-    // ...
+    var location = {};
 
     // Public API here
     return {
-      getShareData: function () {
+      getLocation  : function () {
+        return location;
+      },
+      isWxBrowser  : function () {
+        var ua = $window.navigator.userAgent.toLowerCase();
+        $log.debug(ua.match(/MicroMessenger/i) == "micromessenger");
+        return (ua.match(/MicroMessenger/i) == "micromessenger");
+      },
+      getShareData : function () {
         $window.alert($location.url());
         return $http.post('http://m.womai.com/517Coupon/getShare', {url: $location.url()})
           .then(function (response) {
@@ -40,7 +48,8 @@ angular.module('womai517CouponApp')
           jsApiList: [
             // 所有要调用的 API 都要加到这个列表中
             "onMenuShareTimeline",
-            "onMenuShareAppMessage"
+            "onMenuShareAppMessage",
+            "getLocation"
           ]
         });
 
@@ -58,6 +67,7 @@ angular.module('womai517CouponApp')
         };
 
         wx.ready(function () {
+          $log.debug('wx.ready');
           // 在这里调用 API
           wx.onMenuShareTimeline({
             title  : shareData.desc, // 分享标题
@@ -87,6 +97,22 @@ angular.module('womai517CouponApp')
             cancel : function () {
               // 用户取消分享后执行的回调函数
               // alert("shareF canceled");
+            }
+          });
+
+          wx.getLocation({
+            type   : 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+            success: function (res) {
+              location.latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+              location.longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+              location.speed = res.speed; // 速度，以米/每秒计
+              location.accuracy = res.accuracy; // 位置精度
+              api.getMExtend(location)
+                .then(function (data) {
+
+                }, function (errMsg) {
+
+                });
             }
           });
         });

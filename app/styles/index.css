@@ -93,9 +93,6 @@ input {
   /*-- section 1 --*/
   /*-- 活动规则 --*/
 }
-.home .margin-top {
-  margin-top: .12rem;
-}
 .home .section1 {
   width: 100%;
   /*- banner -*/
@@ -111,6 +108,9 @@ input {
 }
 .home .section1 nav img {
   width: 6.16rem;
+}
+.home .section1 nav.inapp {
+  padding-bottom: .5rem;
 }
 .home .section1 .coupon.container {
   padding: 0;
@@ -210,7 +210,8 @@ input {
   width: 6.4rem;
   overflow: hidden;
   border: 1px solid #cbf514;
-  margin-bottom: .36rem;
+  margin-top: .12rem;
+  margin-bottom: .12rem;
 }
 .home .section1 .list li {
   float: left;

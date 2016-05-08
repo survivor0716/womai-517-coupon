@@ -3,7 +3,7 @@
     <!-- banner -->
     <div class="banner"><img src="images/banner_01.jpg" alt=""></div>
     <!-- nav -->
-    <nav class="text-center"><img src="images/gif/title_01.gif" alt=""></nav>
+    <nav class="text-center"><img src="images/banners/banner_1.gif" alt=""></nav>
     <!-- coupon -->
     <div class="container coupon">
       <!-- 1 -->
@@ -46,9 +46,9 @@
       </div>
     </div>
 
-    <nav class="text-center"><img src="images/gif/title_02.gif" alt=""></nav>
+    <nav class="text-center"><img src="images/banners/banner_2.png" alt=""></nav>
 
-    <ul class="list margin-top">
+    <ul class="list">
       <li class="">
         <a href="http://m.womai.com/0s4050.shtml"><img class="" src="images/link/link_01.png" alt="">
 
@@ -74,35 +74,69 @@
         </a>
       </li>
     </ul>
+    <div class="inapp" ng-if="isInApp()">
+      <nav class="inapp text-center"><img src="images/banners/banner_in_app.png" alt="" ng-click="goToWomai()"></nav>
+    </div>
 
-    <nav class="text-center"><img src="images/gif/title_03.gif" alt=""></nav>
+    <div class="inh5" ng-if="!isInApp()">
+      <nav class="text-center"><img src="images/banners/banner_57.png" alt=""></nav>
 
-    <div class="m-extend">
-      <div class="prod" ng-repeat="type in mExtend track by $index">
-        <div class="prod-name">{{type.type}}</div>
-        <ul class="prod-type">
-          <li class="prod-item" ng-repeat="item in type.item track by $index">
-            <a ng-href="{{item.url}}">
-              <p>
-                <img ng-src="{{item.img}}" alt=""/>
-              </p>
+      <div class="m-extend">
+        <div class="prod" ng-repeat="type in settings.mExtend track by $index">
+          <ul class="prod-type" ng-if="(type.type == '5.7元均一价')">
+            <li class="prod-item" ng-repeat="item in type.item track by $index">
+              <a ng-href="{{item.url + '?sourceIdd=' + settings.sourceId}}">
+                <p>
+                  <img ng-src="{{item.img}}" alt=""/>
+                </p>
 
-              <h2 class="prod-desc">{{item.desc}}</h2>
-            </a>
+                <h2 class="prod-desc">{{item.desc}}</h2>
+              </a>
 
-            <div class="cuxiao">
-              <img src="http://images01.womaiapp.com/s/goodstag/2.jpg" alt=""/>
-            </div>
-            <div class="s-lr">
-              <div class="sl">
-                <span class="s-color2">{{item.price}}</span>
+              <div class="cuxiao">
+                <img src="http://images01.womaiapp.com/s/goodstag/2.jpg" alt=""/>
               </div>
-              <div class="sr">
-                <span class="s-jvBorder s-inblock"><a class="s-jvBtn s-Btn24" ng-href="{{item.url}}">立即购买</a></span>
+              <div class="s-lr">
+                <div class="sl">
+                  <span class="s-color2">{{item.price}}</span>
+                </div>
+                <div class="sr">
+                  <span class="s-jvBorder s-inblock"><a class="s-jvBtn s-Btn24" ng-href="{{item.url}}">立即购买</a></span>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <nav class="text-center"><img src="images/banners/banner_157.png" alt=""></nav>
+
+      <div class="m-extend">
+        <div class="prod" ng-repeat="type in settings.mExtend track by $index">
+          <ul class="prod-type" ng-if="(type.type == '15.7元均一价')">
+            <li class="prod-item" ng-repeat="item in type.item track by $index">
+              <a ng-href="{{item.url + '?sourceIdd=' + settings.sourceId}}">
+                <p>
+                  <img ng-src="{{item.img}}" alt=""/>
+                </p>
+
+                <h2 class="prod-desc">{{item.desc}}</h2>
+              </a>
+
+              <div class="cuxiao">
+                <img src="http://images01.womaiapp.com/s/goodstag/2.jpg" alt=""/>
+              </div>
+              <div class="s-lr">
+                <div class="sl">
+                  <span class="s-color2">{{item.price}}</span>
+                </div>
+                <div class="sr">
+                  <span class="s-jvBorder s-inblock"><a class="s-jvBtn s-Btn24" ng-href="{{item.url}}">立即购买</a></span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -116,7 +150,7 @@
       <close-hint></close-hint>
 
       <div class="reg text-center">
-        <p>亲，新人领券要先绑定手机号哦～</p>
+        <p>填写手机号立刻领券，注册登录后即可使用</p>
 
         <form ng-submit="submitReg()">
           <div class="row">

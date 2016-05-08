@@ -17,15 +17,14 @@ angular.module('womai517CouponApp')
     $scope.settings.bodyClass = 'register';
 
     $scope.submitReg = function () {
-
       var params = {
-        phone: $scope.inputPhone,
-        code: $scope.inputCaptcha,
-        couponid: $scope.settings.couponid,
+        phone         : $scope.inputPhone,
+        code          : $scope.inputCaptcha,
+        couponid      : $scope.settings.couponid,
         captchaSession: $scope.settings.captchaId
       };
       $log.debug(params);
-      $http.post('http://517coupon-01.womai.test.cocos2d-js.cn/submit', params)
+      $http.post('http://m.womai.com/517Coupon/submit', params)
         .then(function (response) {
           $log.debug('success: ', response);
           $window.alert(response.data.errMsg);
@@ -34,12 +33,4 @@ angular.module('womai517CouponApp')
           $log.debug('error: ', response);
         });
     };
-
-    //wxshare.getShareData()
-    //  .then(function (data) {
-    //    $log.debug(data);
-    //    if (1) {
-    //      wxshare.invokeWXShare(data);
-    //    }
-    //  });
   });

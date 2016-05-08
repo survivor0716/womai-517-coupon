@@ -16,7 +16,7 @@ angular.module('womai517CouponApp')
           $log.debug('refresh captcha');
           scope.settings.captchaId = uuid(8, 16);
           $log.debug('captcha id: ', scope.settings.captchaId);
-          var url = 'http://517coupon-01.womai.test.cocos2d-js.cn/captcha?captchaSession=' + scope.settings.captchaId;
+          var url = 'http://m.womai.com/517Coupon/captcha?captchaSession=' + scope.settings.captchaId;
           element.css({'background': "url('" + url + "') no-repeat 50% 50%", 'background-size': 'cover'});
         };
         scope.refreshCaptcha();
