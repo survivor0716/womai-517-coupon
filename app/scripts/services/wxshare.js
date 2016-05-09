@@ -20,7 +20,7 @@ angular.module('womai517CouponApp')
       isWxBrowser  : function () {
         var ua = $window.navigator.userAgent.toLowerCase();
         $log.debug(ua.match(/MicroMessenger/i) == "micromessenger");
-        return (ua.match(/MicroMessenger/i) == "micromessenger");
+        return ua.match(/MicroMessenger/i) == "micromessenger";
       },
       getShareData : function () {
         $window.alert($location.url());

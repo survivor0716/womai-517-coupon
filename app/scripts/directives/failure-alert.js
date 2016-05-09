@@ -2,20 +2,21 @@
 
 /**
  * @ngdoc directive
- * @name womai517CouponApp.directive:oldUserHint
+ * @name womai517CouponApp.directive:failureAlert
  * @description
- * # oldUserHint
+ * # failureAlert
  */
 angular.module('womai517CouponApp')
-  .directive('oldUserHint', function () {
+  .directive('failureAlert', function () {
     return {
       template: '<div class="box">' +
-      '<i class="icon"><img src="images/icon/icon_close.png" alt="" ng-click="closeAlertPanel()"></i>' +
+      '<div class="icon" ng-click="closeRegFailure()"><img src="images/icon/icon_close.png" alt=""></div>' +
       '<ul class="input-group">' +
       '<li>' +
       '<img src="images/cayman.gif" alt="">' +
       '<div>' +
       '<p>{{alertMsg}}</p>' +
+      '<p ng-show="isTwolineAlert()">{{alertMsg2}}</p>' +
       '</div>' +
       '</li>' +
       '</ul>' +

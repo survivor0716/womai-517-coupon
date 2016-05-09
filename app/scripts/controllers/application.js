@@ -15,6 +15,7 @@ angular.module('womai517CouponApp')
       'Karma'
     ];
     $scope.settings = {};
+
     $scope.settings.bodyClass = '';
     $scope.settings.captchaId = null;
     $scope.settings.couponid = null;
@@ -22,16 +23,30 @@ angular.module('womai517CouponApp')
     $scope.settings.mExtend = [];
     $scope.settings.sourceId = $location.search().p || '';
 
+    $scope.user = {
+      phone: '',
+      token: ''
+    };
+
     var isTesting = false;
+    var testLocation = {};
     if ($location.search().lat && $location.search().lng) {
-      var testLocation = {
+      testLocation = {
         lat: $location.search().lat,
         lng: $location.search().lng
       };
       isTesting = true;
     }
+
+    $scope.share = function () {
+      if (wxshare.isWxBrowser()) {
+        $log.debug('share button click');
+        $scope.settings.isShare = true;
+      }
+    };
     $bridge(function (bridge) {
       $scope.share = function () {
+        $log.debug('share button click when bridge is ready');
         if (wxshare.isWxBrowser()) {
           $scope.settings.isShare = true;
           return;
@@ -245,10 +260,10 @@ angular.module('womai517CouponApp')
     }
 
     $scope.isInApp = function () {
-      return false;
+      return $location.search().ua == 'womaiapp';
     };
 
     $scope.goToWomai = function () {
-      $window.location.href = 'http://m.womai.com/0s4005.shtml?sourceId=' + $scope.settings.sourceId;
+      $window.location.href = 'http://m.womai.com/0s4107.shtml?sourceId=' + $scope.settings.sourceId;
     };
   });

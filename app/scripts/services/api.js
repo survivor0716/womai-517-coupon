@@ -30,11 +30,16 @@ angular.module('womai517CouponApp')
 
     // Public API here
     return {
-      getMExtend: function (location) {
-        var params = location || {};
+      getMExtend: function (p) {
+        var params = p || {};
         //$window.alert('请求参数: location: ' + JSON.stringify(params));
         return $http.post(config.getMExtend, params)
           .then(requestSuccess, requestFail);
+      },
+      getCoupon: function (p) {
+        var params = p || {};
+        //$window.alert('请求参数: location: ' + JSON.stringify(params));
+        return $http.post(config.getCoupon, params);
       }
     };
   });
